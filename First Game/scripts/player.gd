@@ -41,5 +41,12 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Portal"):
+		position.x = 1460
+		position.y = -656
+		print("Shazam")
